@@ -2,7 +2,7 @@ import React from 'react'
 
 export  const Header = () => {
   return (
-  <header>
+  <header className=''>
     one1
   </header>
   )
