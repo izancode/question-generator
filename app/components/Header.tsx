@@ -10,7 +10,7 @@ export  const Header = () => {
 
   <div className='max-w-6xl mx-auto flex items-center justify-between px-4 h-full'>
     <Link href="/" className="flex items-center gap-2 ">
-<Image src="/logo.svg" alt="Logo" width={150} height={40} />
+     <Image src="/logo.svg" alt="Logo" width={150} height={40} />
     </Link>
 
     <nav>
