@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes"
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppinsSans = Poppins({
+  variable: "--font-poppins-primary",
   subsets: ["latin"],
-});
+   weight: ["400", "600"],
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+});
+const robotoMono = Roboto({
+  variable: "--font-roboto-secondary",
   subsets: ["latin"],
 });
 
@@ -26,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1920px] mx-auto border-4 border-red-500`}
+        className={`${poppinsSans.variable} ${robotoMono.variable}  antialiased max-w-[1920px] mx-auto border-4 border-red-500`}
       >
-      <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
         {children}
         </ThemeProvider>  
       </body>
