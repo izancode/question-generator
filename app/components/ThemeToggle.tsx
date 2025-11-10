@@ -7,10 +7,10 @@ const ThemeToggle = () => {
    const { theme, setTheme } = useTheme();
    const [mounted, setMounted] = useState(false);
   useEffect(() => {
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setTheme(isDark?'dark':'light')
+//   const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+//   setTheme(isDark?'dark':'light')
     setMounted(true);
-  }, []);
+  }, [setTheme]);
   if (!mounted) {
     return null;
   }
@@ -23,7 +23,7 @@ const ThemeToggle = () => {
  }
  return (
     <>
-   <input type="checkbox" id='darkmode-toggle' className='peer  w-[0] h-[0]  hidden' checked={theme === 'dark'}   onChange={toggleThemeTwo}/>
+   <input type="checkbox" id='darkmode-toggle' className='peer  w-[0] h-[0]  hidden' checked={theme === 'dark'} onChange={toggleThemeTwo}/>
    <label className='group w-[60px] h-[30px] block relative  bg-white-950 rounded-[200px] shadow-[inset_0px_5px_15px_rgba(0,0,0,0.4),_inset_0px_-5px_15px_rgba(255,255,255,0.2)] cursor-custom transition-all duration-300
    
    peer-checked:bg-[#242424]
