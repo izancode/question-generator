@@ -11,7 +11,7 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 
 export  const Header = async () => {
   
-
+ const initialServerValue = true;
 
   return (
 <>
@@ -55,7 +55,7 @@ export  const Header = async () => {
     </nav>
 
    
-    <MenuToggle />
+    <MenuToggle initialValue={initialServerValue}/>
     
     
   </div>
