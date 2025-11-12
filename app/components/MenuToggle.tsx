@@ -2,20 +2,23 @@
 import { PiHamburger } from "react-icons/pi";
 import { RiCloseCircleLine } from "react-icons/ri";
 import {  useState } from 'react';
-
+import { toggleLayout } from "../actions/toggleAction";
 
 const MenuToggle = () => {
-    const [menu, setMenu] = useState(false);
+    const [menu, setMenu] = useState(true);
 
     const menuToggle= async ()=>{
-    const newState = !menu;
-    setMenu(newState);
+   
+    console.log("newState",!menu)
+    setMenu(!menu);
+
+    await toggleLayout(!menu);
 
     }
    
   return (
      <div className='lg:hidden text-black' onClick={menuToggle}>
-        {menu ?<RiCloseCircleLine className=' w-[30px] h-[30px]'/> : <PiHamburger className=' w-[30px] h-[30px]'/>}
+        {menu ? <PiHamburger className=' w-[30px] h-[30px]'/>:<RiCloseCircleLine className=' w-[30px] h-[30px]'/> }
      </div>
   )
 }

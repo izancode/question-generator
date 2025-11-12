@@ -5,13 +5,15 @@ import MenuToggle from './MenuToggle';
 import { RiAiGenerate } from "react-icons/ri";
 import { GrView } from "react-icons/gr";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import { toggleLayout } from '../actions/toggleAction';
 
 
 
 
 export  const Header = async () => {
   
- const initialServerValue = true;
+  const isActive = await toggleLayout();
+  console.log("Header server isActive",isActive)
 
   return (
 <>
@@ -27,7 +29,7 @@ export  const Header = async () => {
      <Image src="/logo.svg" alt="Logo" width={130} height={29}  priority/>
     </Link>
 
-    <nav className='max-lg:fixed max-lg:bg-transparent max-lg:top-[56px] max-lg:left-[0px] max-lg:transition-all max-lg:duration-300 max-lg:ease-in-out   max-lg:w-full max-lg:px-[26px]  max-lg:py-[5px]' >
+    <nav className={`max-lg:fixed max-lg:bg-transparent ${isActive ?'max-lg:top-[100px]' : 'max-lg:top-[56px]'  }  max-lg:left-[0px] max-lg:transition-all max-lg:duration-300 max-lg:ease-in-out   max-lg:w-full max-lg:px-[26px]  max-lg:py-[5px]`} >
         <ul className='flex items-center  max-lg:justify-around max-lg:bg-white max-lg:p-1'>
             <li className='lg:px-5'>
                 <Link href="/" className="hover:text-indigo-600 transition-colors text-gray-500 font-bold text-[12px]">
@@ -55,7 +57,7 @@ export  const Header = async () => {
     </nav>
 
    
-    <MenuToggle initialValue={initialServerValue}/>
+    <MenuToggle />
     
     
   </div>
