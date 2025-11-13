@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppinsSans.variable} ${robotoMono.variable}  antialiased max-w-[1920px] mx-auto border-4 border-red-500`}
+        className={`${poppinsSans.variable} ${robotoMono.variable}  antialiased max-w-[1920px] mx-auto  bg-gray-400 dark:bg-[#212121]`}
       >
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
         {children}
